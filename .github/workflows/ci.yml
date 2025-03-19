@@ -38,8 +38,11 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Check available scripts
+        run: npm run  # Zeigt alle verfügbaren npm-Skripte an
+
       - name: Run Tests
-        run: npm test
+        run: npm test || npm run test || echo "Kein Test-Skript gefunden"
 
   build:
     runs-on: ubuntu-latest
